@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    public static int balance = 50;
+	public static float balance = 50;
     public int limit = 100;
     public float updateRate = 2f;
 
@@ -13,13 +13,14 @@ public class Player : MonoBehaviour {
     public GameObject hudObj;
 	// Use this for initialization
 	void Start () {
+		balance = 50;
         Random.InitState(System.Guid.NewGuid().GetHashCode());
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        float x = Input.acceleration.x;
+		float x = Input.acceleration.x;
         //X> 0 is right, x <0 is left.
 
 
@@ -51,16 +52,19 @@ public class Player : MonoBehaviour {
         }
 
         //control
+		/*
         if(Input.GetKeyDown("z")|| x > 0)
         {
-            balance -= 5;
+			balance -= 5*x;
             Debug.Log(balance);
         }
         if (Input.GetKeyDown("x")|| x < 0)
         {
-            balance += 5;
+			balance += 5*Time.deltaTime;
             Debug.Log(balance);
         }
+        */
+		balance += 50 * x*Time.deltaTime;
 
     }
 

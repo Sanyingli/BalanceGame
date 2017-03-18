@@ -53,12 +53,9 @@ public class HUD : MonoBehaviour {
 
     public void GameOver()
     {
-        float time = Time.time;
-        if (time - 0 > 4)
-        {
-            Animator anim = GetComponent<Animator>();
-            anim.SetTrigger("GameOver");
-        }
+       Animator anim = GetComponent<Animator>();
+       anim.SetTrigger("GameOver");
+
     }
 
     public void GameWin()
@@ -110,4 +107,5 @@ public class HUD : MonoBehaviour {
                 break;
         }
     }
+
 }

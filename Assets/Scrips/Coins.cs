@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    GameObject hud;
+    HUD hudScript;
+    // Use this for initialization
+    private void Awake()
+    {
+        hud = GameObject.FindGameObjectWithTag("HUD");
+    }
 
+    void Start () {
+        hudScript = hud.GetComponent<HUD>();
     }
 	
 	// Update is called once per frame
@@ -18,7 +25,8 @@ public class Coins : MonoBehaviour {
     {
         if(coll.gameObject.tag == "Player") {
             //Debug.Log("score +10");
-            GameMan.socre += 10;
+            GameMan.score += 1;
+            hudScript.StarUpdate(GameMan.score);
             Destroy(this.gameObject);
         }
         }

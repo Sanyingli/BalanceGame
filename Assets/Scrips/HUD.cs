@@ -7,12 +7,14 @@ using UnityEngine.Advertisements;
 
 public class HUD : MonoBehaviour {
 
-    public string lvName = "level2";
+    public string NextlvName = "level2";
 
-    public Text score;
+    public Image[] starImage;
+
     public Button nextLvButton;
     public Button openMenu;
     public Button confirmButton;
+    public Button cancelButton;
 
     public Toggle mute;
 
@@ -24,6 +26,11 @@ public class HUD : MonoBehaviour {
 
     void Awake()
     {
+        for (int i = 0; i < starImage.Length; i++)
+        {
+            starImage[i].enabled = false;
+        }
+
         volume.value = 1;
         menu.SetActive(false);
         Button btn = nextLvButton.GetComponent<Button>();
@@ -35,11 +42,13 @@ public class HUD : MonoBehaviour {
         Button comBut = confirmButton.GetComponent<Button>();
         comBut.onClick.AddListener(CloseMenu);
 
+        Button cancelBut = cancelButton.GetComponent<Button>();
+        cancelBut.onClick.AddListener(CloseMenu);
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-        score.text = "Score:" + GameMan.socre;
       
         if(mute.isOn == false)
         {
@@ -67,7 +76,7 @@ public class HUD : MonoBehaviour {
 
     void TaskOnClick()
     {
-        SceneManager.LoadScene(lvName);
+        SceneManager.LoadScene(NextlvName);
 
     }
 
@@ -107,5 +116,11 @@ public class HUD : MonoBehaviour {
                 break;
         }
     }
-
+    public void StarUpdate(int _score)
+    {
+        for (int i = 0; i < _score; i++)
+        {
+            starImage[i].enabled = true;
+        }
+    }
 }

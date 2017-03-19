@@ -19,7 +19,6 @@ public class LevelSelect : MonoBehaviour {
         {
             if (i > lvReached - 1)
             {
-                Debug.Log("test");
                 lvButton[i].interactable = false;
             }
         }
@@ -35,8 +34,8 @@ public class LevelSelect : MonoBehaviour {
         Debug.Log("This button work");
     }
 
-    public void SetLvReach()
+    public void SetLvReach(int _lvNumber)
     {
-        PlayerPrefs.SetInt(lvReach, 2);
+        PlayerPrefs.SetInt(lvReach, _lvNumber);
     }
 }

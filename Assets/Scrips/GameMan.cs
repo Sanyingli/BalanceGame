@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameMan : MonoBehaviour {
 
-    public static int socre = 0;
+    public static int score = 0;
 
 	// Use this for initialization
 	void Start () {
-		
+        score = 0;
 	}
 	
 	// Update is called once per frame

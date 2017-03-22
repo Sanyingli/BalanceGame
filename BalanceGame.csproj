@@ -90,6 +90,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scrips\AutoMoveObj.cs" />
     <Compile Include="Assets\Scrips\BalanceIndicator.cs" />
     <Compile Include="Assets\Scrips\Coins.cs" />
     <Compile Include="Assets\Scrips\EndPoint.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Assets\Scrips\LevelSelect.cs" />
     <Compile Include="Assets\Scrips\LvButtonInfo.cs" />
     <Compile Include="Assets\Scrips\Player.cs" />
+    <Compile Include="Assets\Scrips\SpwanStuff.cs" />
     <Compile Include="Assets\Scrips\StuffDontDestory.cs" />
   </ItemGroup>
   <ItemGroup>

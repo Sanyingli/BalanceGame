@@ -38,4 +38,9 @@ public class LevelSelect : MonoBehaviour {
     {
         PlayerPrefs.SetInt(lvReach, _lvNumber);
     }
+
+    public void ReSetData()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

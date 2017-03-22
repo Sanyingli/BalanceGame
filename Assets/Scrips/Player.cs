@@ -39,16 +39,7 @@ public class Player : MonoBehaviour {
         if(balance > limit || balance < 0)
         {
             //Debug.Log("Game Over!");
-            HUD hud = hudObj.GetComponent<HUD>();
-            hud.GameOver();
-            Animator anim = GetComponent<Animator>();
-            anim.SetTrigger("Faint");
-            Collider2D cd = GetComponent<BoxCollider2D>();
-            Collider2D cd2 = GetComponent<CircleCollider2D>();
-            cd.enabled = false;
-            cd2.enabled = false;
-
-            this.enabled = false;
+            GameOver();
         }
 
         //control
@@ -101,5 +92,19 @@ public class Player : MonoBehaviour {
             }
         }
     }
+
+    public void GameOver()
+    {
+        HUD hud = hudObj.GetComponent<HUD>();
+        hud.GameOver();
+        Animator anim = GetComponent<Animator>();
+        anim.SetTrigger("Faint");
+        Collider2D cd = GetComponent<BoxCollider2D>();
+        Collider2D cd2 = GetComponent<CircleCollider2D>();
+        cd.enabled = false;
+        cd2.enabled = false;
+
+        this.enabled = false;
+    } 
 
 }
